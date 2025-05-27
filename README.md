@@ -5,42 +5,54 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
 ## Requirements
 
 - Python 3.9+
-- pip
+- pipenv
+
+## Environment Variables
+   - Create a `.env` file in the project root
+   - Copy the keys from the `example.env` file into the created `.env` file
 
 ## Setup Venv
-1. Set up a virtual environment:
+1. Install dependencies and create a virtual environment:
 
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pipenv install
    ```
 
-2. Install the project dependencies:
+2. Activate pipenv virtual environment:
 
    ```bash
-   pip install -r requirements.txt
+   pipenv shell
    ```
 
-3. Set up the environment variables:
-
-   - Create a `.env` file in the project root
-   - Add your YouTube API keys and query term:
-     ```
-     YOUTUBE_API_KEYS=<All keys comma separated>
-     YOUTUBE_QUERY=<query you want to search for>
-     ```
-
-4. Run the migrations to set up the database:
+3. Run the migrations to set up the database:
 
    ```bash
-   python manage.py migrate
+   python3 manage.py migrate
    ```
 
-5. Start the development server:
+4. Start celery worker
+   ```bash
+   celery -A fam_youtube_api worker --loglevel=info
+   ```
+
+5. Start celery beat
+   ```bash
+   celery -A fam_youtube_api beat --loglevel=info
+   ```
+
+6. Start the development server:
 
    ```bash
-   python manage.py runserver
+   python3 manage.py runserver
    ```
 
-6. Access the API:
+7. Access the API:
    Open your browser and go to `http://127.0.0.1:8000/api/videos/` to see the list of YouTube videos.
+
+
+## How I worked this assignment out:
+
+### The choice of framework -
+### The folder structure -
+### The Problem Statement break down -
+### I had fun! -
