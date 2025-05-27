@@ -23,18 +23,20 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
 
    ```bash
    pipenv install
+   pipenv install
    ```
 
 #### 2. Activate pipenv virtual environment:
 
    ```bash
    pipenv shell
+   pipenv shell
    ```
 
 #### 3. Run the migrations to set up the database:
 
    ```bash
-   python manage.py migrate
+   celery -A fam_youtube_api beat --loglevel=info
    ```
 
 #### 4. Start celery worker
@@ -50,7 +52,7 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
 #### 6. Start the development server:
 
    ```bash
-   python manage.py runserver
+   python3 manage.py runserver
    ```
 
 #### 7. Setup the user password:
@@ -177,3 +179,11 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
    Honestly, working on this project has been such a fun ride! I started with just a basic idea, and then things kept growing — from calling the YouTube API to saving videos in the database, setting up Celery (which felt super cool once it worked 😄), and even switching to PostgreSQL for full-text search. Every bug, every "aha!" moment — it’s been super exciting. I’m still learning a lot as I go, and I can’t wait to keep making it better!
 
    Hope you like the Ideas I have put forth. Excited to discuss these with you soon!
+
+
+## How I worked this assignment out:
+
+### The choice of framework -
+### The folder structure -
+### The Problem Statement break down -
+### I had fun! -
