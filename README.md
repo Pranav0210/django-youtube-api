@@ -60,6 +60,18 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
    python manage.py createsuperuser
    ```
 
+#### 8. Setup Celery beat and enable it:
+
+   Step 1: Go to add Intervals (http://localhost:8000/admin/django_celery_beat/intervalschedule/add/) -> 
+      select the interval at which you want to fetch the YouTube API and click save. 
+
+   ![alt text](image.png)
+
+   Step 2: Go to add Periodic tasks (http://localhost:8000/admin/django_celery_beat/periodictask/add/) -> 
+      select the interval that you just created and save
+      
+   ![alt text](image-1.png)
+
 #### 8. Access the API:
 
       Open your browser and go to `http://localhost:8000/admin/videos/youtubevideo/` to see the list of YouTube videos.
