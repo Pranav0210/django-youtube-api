@@ -19,6 +19,8 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
 
 ## Setup PipENV
 
+### For Local setup
+
 #### 1. Install dependencies and create a virtual environment:
 
    ```bash
@@ -55,9 +57,27 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
    python3 manage.py runserver
    ```
 
+### For Container setup
+#### 6. Run the docker compose file
+
+   ```bash
+      cd django-youtube-api
+      docker compose up -d --build
+   ```
+
 #### 7. Setup the user password:
+
+   a. For local setup:
+   
    ```bash
    python manage.py createsuperuser
+   ```
+   b. For container setup
+   ```bash
+   docker container ls  
+   #say the container name of web-server is django-youtube-api-web-1
+   docker exec -it django-youtube-api-web-1 python manage.py createsuperuser
+   #enter you username and password to create the superuser to login in the next step
    ```
 
 #### 8. Setup Celery beat and enable it:
