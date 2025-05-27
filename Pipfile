@@ -11,6 +11,8 @@ celery = "*"
 redis = "*"
 requests = "*"
 django-celery-beat = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
