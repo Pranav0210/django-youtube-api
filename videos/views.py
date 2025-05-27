@@ -8,16 +8,17 @@ from django.db.models import Q
 
 # Create your views here.
 
-class YouTubeVideoListView(ListAPIView):
-    queryset = YouTubeVideo.objects.all()
-    serializer_class = YouTubeVideoSerializer
-    filter_backends = [SearchFilter]
-    search_fields = ['title', 'description']
-
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 10
     page_size_query_param = "page_size"
     max_page_size = 50
+class YouTubeVideoListView(ListAPIView):
+    queryset = YouTubeVideo.objects.all()
+    serializer_class = YouTubeVideoSerializer
+    pagination_class = StandardResultsSetPagination
+    filter_backends = [SearchFilter]
+    search_fields = ['title', 'description']
+
 
 class YouTubeVideoSearchAPIView(ListAPIView):
     serializer_class = YouTubeVideoSerializer
