@@ -25,20 +25,18 @@ This is a Django + Django Rest Framework (DRF) project. API to fetch latest vide
 
    ```bash
    pipenv install
-   pipenv install
    ```
 
 #### 2. Activate pipenv virtual environment:
 
    ```bash
    pipenv shell
-   pipenv shell
    ```
 
 #### 3. Run the migrations to set up the database:
 
    ```bash
-   celery -A fam_youtube_api beat --loglevel=info
+   python3 manage.py migrate
    ```
 
 #### 4. Start celery worker
